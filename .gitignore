@@ -1,0 +1,17 @@
+# TERRAFORM
+.terraform/       # Local provider plugins and temp files (skips the entire .terraform/ folder)
+*.tfstate         # Terraform state files (actual resource mappings)
+*.tfstate.backup  # Backup state files
+*.lock.hcl        # Terraform lock files that track provider versions
+
+# EXECUTABLES
+*.exe              # This catches my massive .exe binary 
+
+# Ignore huge Terraform provider binary
+infra/.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.117.1/windows_amd64/terraform-provider-azurerm_v3.117.1_x5.exe
+
+
+# SYSTEM + VS CODE
+.DS_Store
+.vscode/
+*.log

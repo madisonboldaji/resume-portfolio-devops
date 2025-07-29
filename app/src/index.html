@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />   <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design to ensure proper scaling on different devices -->
+    <title>Madison Kallenborn | Resume</title>
+
+
+    <!-- Link to your stylesheet -->
+     <link rel="stylesheet" href="../styles/main.css"> <!-- Link to the main stylesheet for styling the resume -->
+     <!-- Load Markdown parser -->
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  <!-- Load the Marked library for parsing Markdown content -->
+</head>
+
+<body>
+    <h1>My Resume</h1>
+
+    <!-- Resume output -->
+    <article id="resume"></article>  <!-- This is where the resume content will be rendered -->
+
+    <!-- Editor to update markdown live -->
+     <section id="editor">   
+        <h2>Edit Section</h2>
+
+        <!-- Dropdown to choose section to edit -->
+         <label for="section-select">Choose section:</label>  <!-- Label for the section selection dropdown -->
+         <select id="section-select">
+            <option value="summary">Summary</option>
+            <option value="education">Education</option>
+            <option value="certifications">Certifications</option>
+            <option value="technical skills">Technical Skills</option>
+            <option value="experience">Experience</option>
+            <option value="projects">Projects</option>
+            <option value="professional affiliations">Professional Affiliations</option>
+            <option value="honors & awards">Honors & Awards</option>
+         </select>
+
+         <!-- Input area -->
+          <label for="editor-text">Edit Content:</label>  <!-- Label for the text area where users can edit the content -->
+          <textarea id="editor-text" oninput="autoResize(this)"></textarea>  <!-- Textarea for editing the content, with an auto-resize function -->
+          <script>
+            function autoResize(textarea) {
+                textarea.style.height = 'auto';  // Reset height to auto to calculate new scrollHeight
+                textarea.style.height = textarea.scrollHeight + 'px';  // Adjust the height of the textarea based on its content as user types
+            }
+          </script>
+
+          <!-- Save button -->
+           <button onclick="saveSection()">Save</button>   <!-- Button to save the edited content -->
+        </section>
+        
+    <!-- Show last update time -->
+    <footer>Last updated: <span id="last-updated"></span></footer>   <!-- Footer to display the last updated time of the resume -->
+
+    <!-- Load javascript -->
+    <script src="resume.js"></script>  <!-- Load the JavaScript file that handles the resume functionality -->
+</body>
+</html>

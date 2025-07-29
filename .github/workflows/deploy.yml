@@ -1,0 +1,35 @@
+# CI/CD Pipeline (GitHub Actions Pipeline - a type of CI/CD pipeline for deploying a resume site to Azure Static Web Apps)
+# Name of the workflow as it will appear in GitHub's Actions tab
+name: Deploy Resume Site to Azure  
+
+# When should this workflow run?
+on:  
+    push:  
+        branches:
+            - main     # Trigger the workflow only when pushing to the main branch
+
+# Define the pipeline steps
+jobs:
+    build-and-deploy:           # The job name
+        runs-on: ubuntu-latest  # Run this job on the latest Ubuntu runner
+
+        steps:                  # Ordered list of steps to execute in this job/for this pipeline
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            # This checks out my repo so GitHub Actions can access my files
+
+            - name: Deploy to Azure Static Web Apps
+              uses: Azure/static-web-apps-deploy@v1
+              # This step deploys your static resume site to Azure
+
+              with:
+                azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                # This token gives GitHub permission to deploy to your Azure Static Web App
+
+                repo_token: ${{ secrets.GITHUB_TOKEN }}
+                # GitHub automatically provides this to interact with the repo
+
+                action: "upload"     # Action to perform, in this case, upload the site - Tells the action to upload my files
+                app_location: "app"  # Location of the app files in the repo (where my app - resume site - lives)
+                output_location: "app/src"   # This is where my built HTML/JS files are located after build
+

@@ -1,0 +1,54 @@
+/* Global layout and font */
+body {
+    font-family: 'Times New Roman', Times, serif;  /* Font */
+    background-color: #f7f6be;   /* Soft light yellow background color */
+    margin: 0;                     /* Remove default margin */
+    padding: 2rem;                 /* Add padding around the content */
+    display: flex;                 /* Enable flexbox layout */
+    justify-content: center;       /* Center content horizontally */
+}
+
+/* Resume container styling */
+#resume-container {
+    background-color: #f9f9f9;   /* Off white background for the resume container */
+    padding: 2rem;
+    max-width: 800px;              /* Limit the width of the resume */
+    margin: auto;                  /* Center the container */
+    color: #333;                 /* Dark text color for readability */
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;            /* Center the header text */
+    margin-bottom: 1.5rem;         /* Space below the header */
+    font-size: 2.5rem;             /* Larger font size for the header */
+}
+
+/* Editor form box */
+#editor {
+    background: #fff;            /* White background for the editor */
+    padding: 1rem;                 /* Padding inside the editor */
+    border: 1px solid #ccc;      /* Light gray border */
+    margin-top: 2rem;              /* Space above the editor */
+    border-radius: 8px;            /* Rounded corners */
+}
+
+/* Text area */
+textarea {
+    width: 100%;                   /* Full width of the editor */
+    height: 200px;                 /* Fixed height for the text area */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    font-size: 1rem;               /* Standard font size */
+    padding: 0.5rem;               /* Padding inside the text area */
+    border: 1px solid #ccc;      /* Light gray border */
+    border-radius: 4px;            /* Slightly rounded corners */
+    box-sizing: border-box;        /* Include padding and border in element's total width and height */
+}
+
+/* Footer */
+footer {
+    text-align: center;            /* Center the footer text */
+    margin-top: 2rem;              /* Space above the footer */
+    font-size: 0.9rem;             /* Smaller font size for the footer */
+    color: #777;                 /* Lighter text color for the footer */
+}
