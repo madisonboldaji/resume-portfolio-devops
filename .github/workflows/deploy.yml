@@ -24,7 +24,7 @@ jobs:
 
               with:
                 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-                # This token gives GitHub permission to deploy to your Azure Static Web App
+                # This token gives GitHub permission to deploy to Azure Static Web App
 
                 repo_token: ${{ secrets.GITHUB_TOKEN }}
                 # GitHub automatically provides this to interact with the repo
