@@ -31,4 +31,6 @@ jobs:
 
                 action: "upload"             # Action to perform, in this case, upload the site - Tells the action to upload my files
                 app_location: "app"          # Location of the app files in the repo (where my app - resume site - lives)
+                api_location: "api" 
                 output_location: ""   # Leave this blank for static sites
+             
