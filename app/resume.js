@@ -2,7 +2,7 @@ let resumeText = "";  // holds full markdown text
 
 // Load resume.md file and render it
 async function loadResume() {
-    const res = await fetch("../content/resume.md");  // Fetch the resume markdown file
+    const res = await fetch("./resume.md");           // Fetch the resume markdown file
     resumeText = await res.text();                    // Store file content
     renderResume();                                   // convert to HTML 
 }
@@ -30,7 +30,7 @@ function replaceSection(tag, newContent) {
 
 // When dropdown changes, load that section into editor
 document.getElementById("section-select").addEventListener("change", () => {
-    const tag = document.getElementById("section-select").ariaValueMax;  // Get selected section tag
+    const tag = document.getElementById("section-select").value;     // Get selected section tag
     document.getElementById("editor-text").value = getSection(tag);  // Load section content into editor
 });
 
